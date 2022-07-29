@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+<!-- ======= Testimonials Section ======= -->
+{% block content %}
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
+            <p>Get Enlighten from our knowledgebase.</p>
+        </div>
+
+        <div class="about-items" style="margin-top: 2cm; margin-bottom: 1cm;">
+            {{items.text | safe}}
+        </div>
+
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "layouts/base.html" %}
+{% from 'macros/formrenderer.html' import render_field %}
+
+
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>Have any Enquiries or Complaints?, Reach out to us on our channels </p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row mt-5">
+          {% if setting %}
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>{{setting.address}}</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>{{setting.email}}</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>{{setting.contact_phone}}</p>
+              </div>
+
+            </div>
+
+          </div>
+          {% endif %}
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="#" method="POST" role="form" class="php-email-form"> 
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  {{render_field(form.name, class_='form-control', placeholder=form.name.label.text)}}
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  {{render_field(form.email, class_='form-control', placeholder=form.email.label.text)}}
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                {{render_field(form.text, class_='form-control', rows="5", placeholder=form.text.label.text)}}
+              </div>
+              
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}

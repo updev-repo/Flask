@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="google-site-verification" content="eO7v2aO6uakHOD3gSnChM4_GSUpar3MVqPZzr9cWENE">
+    <title>{{config.APP_NAME}}</title>
+
+
+
+    <link rel="stylesheet" type="text/css" href="/static/css/styles/app.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles/vendor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/checkbox.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles/custom.css">
+    <link rel="stylesheet" type="text/css" href="https://networkedin.ng/static/css/toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css">
+
+
+    <!----Mouseflow ends --->
+    {% block extra_css %}
+    {% endblock %}
+</head>
+
+<body>
+	{% include 'includes/_flashes.html' %}
+        {% block content %}
+        {% endblock %}
+
+        </script>
+        <link rel="stylesheet" type="text/javascript" href="/static/js/jquery.min.js">
+        <link rel="stylesheet" type="text/javascript" href="/static/js/semantic.min.js">
+        <link rel="stylesheet" type="text/javascript" href="/static/js/tablesort.min.js">
+        <link rel="stylesheet" type="text/javascript" href="/static/js/zxcvbn.js">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+        <script type="text/javascript" src="/static/scripts/vendor.js"></script>
+
+        <script type="text/javascript" src="/static/scripts/app.js"></script>
+        <script type="text/javascript" src="/static/scripts/custom.js"></script>
+
+        {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>
