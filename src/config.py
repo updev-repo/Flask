@@ -92,7 +92,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     ASSETS_DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL', "postgresql://postgres:postgres@localhost/fhi_360")
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL', "mysql://username:password@localhost/db_name")
 
     @classmethod
     def init_app(cls, app):
@@ -113,7 +113,7 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get(
-        'DATABASE_URL', "postgresql://postgres:Prod_db_Networked_@__21@localhost:5433/networked")    
+        'DATABASE_URL', 'mysql://username:password@localhost/db_name')    
     SSL_DISABLE = (os.environ.get('SSL_DISABLE') or 'True') == 'True'
 
     @classmethod
