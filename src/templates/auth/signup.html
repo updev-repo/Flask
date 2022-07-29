@@ -1,0 +1,73 @@
+{% extends "layouts/auth.html" %}
+{% from 'macros/formrenderer.html' import render_field %}
+
+{% block content %}
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- <div class="col-md-6 order-md-2">
+          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+        </div> -->
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                  <div class="mb-4">
+                  <h3>Sign In to <strong>{{config.APP_NAME}}</strong></h3>
+                  <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+                </div>
+                <form action="#" method="post">
+                  <div class="form-group first">
+                    <label for="email">First Name</label>
+                    {{render_field(form.first_name, class_='form-control')}}
+
+                  </div>
+                  <div class="form-group first">
+                    <label for="email">Last Name</label>
+                    {{render_field(form.last_name, class_='form-control')}}
+
+                  </div>
+                  <div class="form-group first">
+                    <label for="email">Email</label>
+                    {{render_field(form.email, class_='form-control')}}
+
+                  </div>
+                  <div class="form-group first">
+                    <label for="email">Username</label>
+                    {{render_field(form.username, class_='form-control')}}
+
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="password">Password</label>
+                    {{render_field(form.password, class_='form-control')}}
+                    
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="confirm">Confirm</label>
+                    {{render_field(form.confirm, class_='form-control')}}
+
+                  </div>
+                  <div class="form-group first">
+                    <label for="email">Phone Number</label>
+                    {{render_field(form.phone_number, class_='form-control')}}
+
+                  </div>
+                  </div>
+
+                  <input type="submit" value="Register" class="btn btn-pill text-white btn-block btn-primary">
+
+                  <span class="d-block text-center my-4 text-muted"> or sign in
+              <a href="{{url_for('auth.login')}}"> <input type="button" value="Login" class="btn btn-pill text-white btn-block btn-secondary">
+              </a></span>
+
+                </form>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+{% endblock %}  
