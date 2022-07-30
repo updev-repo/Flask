@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% include 'top.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+
+{% block body %} 
+    <h1>Posts</h1>
+        {% for post in posts %}
+        {% if post %}
+            {% if session.name %}
+            <div class="title card mb2">
+                <div class="card-body">
+                    <h4 class="card-title">{{post.title}}</h4>
+                    <p class="card-text">{{post.body}}</p>
+                    <div class="date">
+                        {{post.time.strftime('%Y-%m-%d')}}
+                        </div>
+                </div>  
+            <div class="card-status">
+                <div class="row">
+                    <div class="col-2 ">
+                        <a href="{{ url_for('post.update_post', post_id=post.id) }}">Update</a>
+                    </div>
+
+                    <div class="col-2 ">
+                        <form action="{{ url_for('post.delete', post_id=post['id']) }}" method="post">
+                            <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+                          </form>                    
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="title card mb2">
+                <div class="card-body">
+                    <h4 class="card-title">{{post.title}}</h4>
+                    <p class="card-text">{{post.body}}</p>
+                    <div class="date">
+                        {{post.time.strftime('%Y-%m-%d')}}
+                        </div>
+                </div>  
+            {% endif %}
+        </div>
+
+        </div>
+        {% else %}
+        <p>ogin to view and create posts.</p>
+        {% endif%}
+
+    {% endfor %}
+
+
+
+{% endblock %}
