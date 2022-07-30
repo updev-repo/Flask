@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Create An Account{% endblock %}
+
+
+{% block body %}
+    <div class="msg">
+        {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+</div>
+<form method="post">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="username" name="username" class="form-control" id="username" aria-describedby="username">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="password">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" id="email">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div>
+  Already a user? 
+  <a href="{{ url_for('auth.login') }}">Log In</a>
+</div>
+
+{% endblock %}
