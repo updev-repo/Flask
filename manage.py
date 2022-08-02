@@ -1,20 +1,18 @@
-from flask import Flask, render_template
-from app import app
+from apps import create_app
+from apps.api.routes import api
+from apps.auth.routes import auth
+from apps.account.routes import account
+from flask_login import LoginManager
 
-
-@app.route("/")
-def home():
-    return "hello world"
-
-
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
-
-def runserver():
-    app.run(debug=True, host="0.0.0.0", port=8000)
-
+from config.login import login_manager
 
 if __name__ == "__main__":
-    runserver()
+    app = create_app()
+
+    app.register_blueprint(auth)
+    app.register_blueprint(api)
+    app.register_blueprint(account)
+
+    login_manager.init_app(app)
+
+    app.run(debug=True, port=8000)
