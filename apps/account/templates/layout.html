@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="/static/auth/css/index.css">
+    {% block title %} {% endblock %}
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <h3 class="nav-title text-primary"> UpDev </h3>
+        <div class="nav-link">
+            <p> Hello, <span class="text-primary"> {{ current_user.fullname}}</span></p>
+            <a href="{{url_for('auth.logout_page')}}">
+                <button class="btn btn-primary">Logout</button>
+            </a>
+        </div>
+    </nav>
+</header>
+{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Account</title>
+{% endblock %}
+
+{% block content %}
+<section class="form-box" style="text-align: center">
+  <h2> Welcome to UpDev </h2>
+  <h2 style="margin:  10px 0px;"> You are currently logged in with {{ current_user.email}} </h2>
+  <a href="{{url_for('api.all_users')}}" target="_blank">
+  <button style="margin-top: 10px" class="btn btn-primary"> View All Users API </button>  
+  </a>
+</section>
+{% endblock %}

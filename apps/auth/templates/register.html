@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title> Register </title>
+{% endblock %}
+
+{% block content %}
+<section class="form-box">
+    <div style="text-align: center;">
+        <h2 >Register </h2>
+        <p style="margin: 10px 0px;"> Hello! Register your account </p>
+        {% if error %}
+        <h5 class="text-error" style="margin: 10px 0px;"> {{error}} </h5>
+        {% endif%}
+    </div>
+
+<form method="post" name="register">
+    {{ form.hidden_tag()}}
+
+    {{form.fullname.label}}
+    {{form.fullname()}}
+
+    {{form.email.label}}
+    {{form.email()}}
+
+    {{form.password.label}}
+    {{form.password()}}
+
+    {% if form.password.errors %}
+        {% for error in form.password.errors %}
+            {{error}}
+        {% endfor %}
+    {% endif %}
+
+    <div style="text-align: right;">
+        {{form.submit(class="btn btn-primary")}}
+    </div>
+    
+</form>
+</section>
+{% endblock %}
