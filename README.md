@@ -20,7 +20,7 @@ file:///home/david/Pictures/Screenshots/Screenshot%20from%202022-08-20%2010-01-5
 # Setting the application
 this application requires a database to run. the database required is mysql.
 
-in the app congig settings in apps.py, set the SQLALCHEMY_DATABASE_URI to match the user, password and host of the mysql serer to be used.
+in the app config settings in apps.py, set the SQLALCHEMY_DATABASE_URI to match the user, password and host of the mysql serer to be used.
 
 the name of the database should remain flask
 
